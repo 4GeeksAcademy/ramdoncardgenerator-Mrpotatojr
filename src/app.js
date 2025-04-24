@@ -7,8 +7,8 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   // Listas de números y símbolos
-  let numeros = ["A", 2, 3, 4, 5, 6, 7, 8, 9, "J", "Q", "K"];
-  let iconos = ["♥", "♦", "♣", "♠"];
+  const CARD_NUMBER = ["A", 2, 3, 4, 5, 6, 7, 8, 9, "J", "Q", "K"];
+  const CARD_ICON = ["♥", "♦", "♣", "♠"];
 
   // Función para obtener un índice aleatorio
   function random(lista) {
@@ -16,14 +16,14 @@ window.onload = function() {
   }
 
   // Generar número y símbolo aleatorios
-  let numCard = numeros[random(numeros)];
-  let iconCard = iconos[random(iconos)];
+  const GENERATE_NUM_CARD = CARD_NUMBER[random(CARD_NUMBER)];
+  const GENERATE_ICON_CARD = CARD_ICON[random(CARD_ICON)];
 
-  document.getElementById("number").textContent = numCard;
-  document.getElementById("top-suit").textContent = iconCard;
-  document.getElementById("bottom-suit").textContent = iconCard;
+  document.getElementById("number").textContent = GENERATE_NUM_CARD;
+  document.getElementById("top-suit").textContent = GENERATE_ICON_CARD;
+  document.getElementById("bottom-suit").textContent = GENERATE_ICON_CARD;
 
-  if (iconCard === "♥" || iconCard === "♦") {
+  if (GENERATE_ICON_CARD === "♥" || GENERATE_ICON_CARD === "♦") {
     document.getElementById("top-suit").style.color = "red";
     document.getElementById("bottom-suit").style.color = "red";
     document.getElementById("number").style.color = "red";
